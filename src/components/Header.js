@@ -5,7 +5,7 @@ function Header () {
     return (
         <>
             <p>Promotion</p>
-            <Login />
+            
 
         </>
     )
