@@ -56,7 +56,9 @@ function SignUp () {
         })
             .then((res)=> res.json())
             .then((userData) => console.log(userData))
-
+        setEmail('');
+        setPassword('');
+        setFormData([]);
     }
     return (
         <form className="sign-up-form" onSubmit={handleSubmit}>
