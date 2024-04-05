@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link, Route, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import ProductDetails from "./ProductDetails";
+import ProductItem from "./ProductItem";
 
 function ProductList () {
     const [toys, setToys] = useState([])
+    
     useEffect(() => {
         fetch("http://localhost:8000/toys")
         .then(res => res.json())
@@ -20,48 +24,46 @@ function ProductList () {
             <div className="new-arrival">
                 <h2>NEW ARRIVAL</h2>
                 <div className="toy-item-list">
-                    {newArrivalToys.map((toy) => {
-                        return(
-                        <div className="toy-item" key={toy.id}>
-                            <img src={toy.image} alt="toy-name" />
-                            <h4>{toy.name}</h4>
-                            <p>{toy.price}</p>
-                            <button>Add to cart</button>
-                        </div>
-                        )
-                    })}
+                    {newArrivalToys.map((toy) => (
+                        <ProductItem 
+                        id={toy.id}
+                        key={toy.id}
+                        image={toy.image}
+                        name={toy.name}
+                        price={toy.price}
+                        clearance={ toy.clearance ? <p>Save {toy.discount}</p> : null } />
+                    ))
+                    }
                 </div>
             </div>
             <div className="clearance">
                 <h2>CLEARANCE</h2>
                 <div className="toy-item-list">
-                    {clearanceToys.map((toy) => {
-                        return (
-                            <div className="toy-item" key={toy.id}>
-                                <img src={toy.image} alt="toy-name" />
-                                <h4>{toy.name}</h4>
-                                <p>{toy.price}</p>
-                                <p>Save {toy.discount}</p>
-                                <button>Add to cart</button>
-                            </div>
-                        )
-                    })}
+                    {clearanceToys.map((toy) => (
+                        <ProductItem 
+                        id={toy.id}
+                        key={toy.id}
+                        image={toy.image}
+                        name={toy.name}
+                        price={toy.price}
+                        clearance={ toy.clearance ? <p>Save {toy.discount}</p> : null } />
+                    )
+                    )}
                 </div>
             </div>
             <div className="all-toys">
                 <h2>TOYS</h2>
                 <div className="toy-item-list">
-                    {toys.map((toy) => {
-                        return (
-                            <div className="toy-item" key={toy.id}>
-                                <img src={toy.image}  alt="toy-name" />
-                                <h4>{toy.name}</h4>
-                                <p>{toy.price}</p>
-                                {toy.clearance ? <p>Save {toy.discount}</p> : null }
-                                <button>Add to cart</button>
-                            </div>
-                        )
-                    })}
+                    {toys.map((toy) => (
+                        <ProductItem 
+                        id={toy.id}
+                        key={toy.id}
+                        image={toy.image}
+                        name={toy.name}
+                        price={toy.price}
+                        clearance={ toy.clearance ? <p>Save {toy.discount}</p> : null } />
+                    )
+                    )}
                 </div>
             </div>
         </div>
