@@ -5,6 +5,9 @@ import Login from './components/Login';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import NavBar from './components/NavBar';
 import SignUp from './components/Signup';
+import ProductList from './components/ProductList';
+import ProductDetails from './components/ProductDetails';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -17,6 +20,15 @@ function App() {
         </Route>
         <Route path="/signup">
           <SignUp />
+        </Route>
+        <Route exact path="/products">
+          <ProductList />
+        </Route>
+        <Route path="/products/:id">
+          <ProductDetails />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
         <Route exact path="/">
           <Home />
