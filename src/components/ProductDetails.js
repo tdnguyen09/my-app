@@ -19,6 +19,7 @@ function ProductDetails () {
                 <h2>{displayToy.name}</h2>
                 <p>{displayToy.price}</p>
                 {displayToy.clearance ? <p>Save {displayToy.discount}</p> : null }
+                <button>Add to cart</button>
             </div>
         </div>
     )
