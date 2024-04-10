@@ -28,8 +28,6 @@ function ProductList () {
     function handleSearchChange(event){
      setInput(event.target.value)
     }
-    console.log(input)
-    console.log(searchResult)
 
     return (
         <div className="product">
@@ -97,4 +95,4 @@ function ProductList () {
     )
 }
 
-export default ProductList;
+export default ProductList ;
