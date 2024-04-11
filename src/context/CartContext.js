@@ -5,6 +5,7 @@ const CartContext = React.createContext()
 function CartProvider({ children }) {
     const [cartItems, setCartItems] = useState([]);
     const [datas, setData] = useState([]);
+    
     useEffect(() => {
         fetch("http://localhost:8000/toys")
         .then(res => res.json())
@@ -70,6 +71,7 @@ function CartProvider({ children }) {
 
     const contextValue ={
         items: cartItems,
+        allToyDatas: datas,
         getItemQuantity,
         addToCart,
         removeFromCart,

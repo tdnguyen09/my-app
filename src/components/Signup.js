@@ -9,6 +9,7 @@ function SignUp () {
         dob:"",
         address:""
     })
+    const [showPassword, setShowPassword] = useState(false)
 
     function handleEmailChange(event){
         setEmail(event.target.value)
@@ -32,7 +33,7 @@ function SignUp () {
     }
 
     function passwordVisibility(){
-
+        setShowPassword(!showPassword)
     }
 
 
@@ -70,7 +71,7 @@ function SignUp () {
                 <label for="email-sign-up">Email</label>
                 <input type="email" name="email-sign-up" id="email-sign-up" onChange={handleEmailChange} value={email} required />
                 <label for="password-sign-up">Create a password</label>
-                <input type="password" name="password-sign-up" id="password-sign-up" value={password} onChange={handlePasswordChange} required />
+                <input type={showPassword ? "text" : "password"} name="password-sign-up" id="password-sign-up" value={password} onChange={handlePasswordChange} required />
                 <input type="checkbox" name="show-password" onClick={passwordVisibility} />Show Password
                 <label for="firstname">First Name</label>
                 <input type="text" name="firstname" id="firstname" onChange={handleChange} value={formData.firstname} required />

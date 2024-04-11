@@ -14,7 +14,6 @@ function NavBar(){
             <NavLink to="/cart">
                 <div className="nav-cart">
                     <img src="https://www.svgrepo.com/show/80543/shopping-cart-outline.svg" alt="cart-icon" style={{width:'30px'},{height:'30px'}} />
-                    <div>{cart.totalQuantity()} item(s) </div>
                 </div>
             </NavLink>
         </div>

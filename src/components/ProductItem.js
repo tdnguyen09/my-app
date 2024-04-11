@@ -7,7 +7,7 @@ function ProductItem({ image, name, price, clearance, id }){
                 <Link to={`/products/${id}`}>
                     <img src={image}  alt="toy-name" />
                     <h4>{name}</h4>
-                    <p>{price}</p>
+                    <p>$ {price}</p>
                     <p>{clearance}</p>
                 </Link>
             </>

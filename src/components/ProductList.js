@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ProductItem from "./ProductItem";
 import SearchResultList from "./SearchResultList";
 import "./SearchResultList.css";
 import { FaSearch } from "react-icons/fa";
+import { CartContext } from "../context/CartContext";
 
 function ProductList () {
-    const [toys, setToys] = useState([]);
+    const cart = useContext(CartContext);
     const [input, setInput] = useState('');
-    useEffect(() => {
-        fetch("http://localhost:8000/toys")
-        .then(res => res.json())
-        .then((toys) => {
-            setToys(toys)
-        })
-    },[])
-    let newArrivalToys = toys.filter((toy) => toy.new === true);
-    let clearanceToys = toys.filter((toy) => toy.clearance === true);
-    let searchResult = toys.filter((toy) => {
+    let searchResult = cart.allToyDatas.filter((toy) => {
         return (
             input &&
             toy &&
@@ -39,45 +31,11 @@ function ProductList () {
                 <div className="display-search-list">
                     <SearchResultList searchResult={searchResult}/>
                 </div>
-            </div>          
-            <div className="new-arrival">
-                <h2>NEW ARRIVAL</h2>
-                <div className="toy-item-list">
-                    {newArrivalToys.map((toy) => (
-                        <div className="toy-item">
-                            <ProductItem 
-                            id={toy.id}
-                            key={toy.id}
-                            image={toy.image}
-                            name={toy.name}
-                            price={toy.price}
-                            clearance={ toy.clearance ? <p>Save {toy.discount}</p> : null } />
-                        </div>
-                    ))
-                    }
-                </div>
-            </div>
-            <div className="clearance">
-                <h2>CLEARANCE</h2>
-                <div className="toy-item-list">
-                    {clearanceToys.map((toy) => (
-                        <div className="toy-item">
-                            <ProductItem 
-                            id={toy.id}
-                            key={toy.id}
-                            image={toy.image}
-                            name={toy.name}
-                            price={toy.price}
-                            clearance={ toy.clearance ? <p>Save {toy.discount}</p> : null } />
-                        </div>
-                    ))
-                    }
-                </div>
-            </div>
-            <div className="all-toys">
+            </div>   
+            <div>       
                 <h2>TOYS</h2>
                 <div className="toy-item-list">
-                    {toys.map((toy) => (
+                    {cart.allToyDatas.map((toy) => (
                         <div className="toy-item">
                         <ProductItem 
                             id={toy.id}
