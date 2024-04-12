@@ -13,12 +13,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#home:first-child{
+.pictures{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 1500px;
-  height: auto;
+  width: 1400px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  animation: changePictures 5s infinite normal;
+}
+@keyframes changePictures {
+  0% {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/04/76/79/70/1000_F_476797090_GD9J6JoeR956o2yXxMBEqQEw0xnlgAx5.jpg');
+  }
+  50% {
+    background-image: url('https://t3.ftcdn.net/jpg/03/56/42/48/240_F_356424856_ycZSM3cKXlG5ntv6UoLJvV1qCw511eAq.jpg');
+  }
+  100%{
+    background-image: url('https://wwd.com/wp-content/uploads/2023/06/MEGA989664_002.jpg?crop=0px%2C404px%2C3600px%2C2015px&resize=1000%2C563');
+  }
 }
 
 .navbar {
@@ -27,9 +41,13 @@ background-color: rgb(235, 245, 104);
 display: flex;
 flex-direction: row;
 justify-content: space-around;
+align-items: center;
 margin: 25px auto;
 height: 30px;
-color: black;
+}
+.no-underline{
+  text-decoration: none;
+  color: black;
 }
 
 .nav-cart {
@@ -145,7 +163,7 @@ color: black;
   width: fit-content;
   margin: 25px auto 75px;
   padding: 15px;
-  border: solid 5px black;
+  border: dotted 2px black;
   row-gap: 10px;
 }
 .sign-up input {
@@ -153,18 +171,21 @@ color: black;
   width: 400px;
   height: 20px;
 }
-.send-notification{
-  border: solid 2px black;
-  width: min-content;
+.span-container{
+  width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-content: start;
-  gap: 0px;
-  
+  gap: 0;
 }
-.send-notification label{
+.span-container p{
   font-size: 10px;
+  width: 80%;
+  text-align: left;
+}
+.span-container input{
+  width: 20%;
 }
 .sign-up button{
   margin: auto;
@@ -175,18 +196,25 @@ color: black;
 }
 
 .display-toy{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 30px auto;
+  width: 1400px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 .display-toy img{
-  width: 500px;
+  width: 50%;
 }
 .toy-infomation{
-  width: 300px;
-  border: solid 2px black;
+  width: 80%;
+  text-align: left;
+  font-weight: bolder;
+}
+.cart-btn {
+  width: fit-content;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 
@@ -206,3 +234,7 @@ td {
   width: 60%;
 }
 
+.the-user-information{
+  margin-top: 20px;
+  margin-bottom: 20pxgit;
+}
