@@ -13,14 +13,13 @@ import { CartContext, CartProvider } from './context/CartContext';
 
 
 function App() {
-  const cart = useContext(CartContext)
   return (
     <div className="App">
       <CartProvider>
         <NavBar />
         <Switch>
           <Route path='/login' >
-            {cart.isLogin ? <Logout /> : <Login />}
+            <Login />
           </Route>
           <Route path='/logout'>
             <Logout /> 
