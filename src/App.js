@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
-import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import Logout from './components/Logout';
+import { Redirect, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import NavBar from './components/NavBar';
 import SignUp from './components/Signup';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
-import { CartProvider } from './context/CartContext';
+import { CartContext, CartProvider } from './context/CartContext';
 
 
 function App() {
+  const cart = useContext(CartContext)
   return (
     <div className="App">
       <CartProvider>
         <NavBar />
         <Switch>
-          <Route path="/login">
-            <Login />
+          <Route path='/login' >
+            {cart.isLogin ? <Logout /> : <Login />}
+          </Route>
+          <Route path='/logout'>
+            <Logout /> 
           </Route>
           <Route path="/signup">
             <SignUp />
