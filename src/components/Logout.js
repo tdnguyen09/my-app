@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Cart from "./Cart";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CartContext } from "../context/CartContext";
@@ -13,9 +13,9 @@ function Logout () {
     }
     return (
         <div className="the-user-information">
-                    <h2>Hello{cart.username}</h2>
-                    <Cart />
-                    <button onClick={handleClick}>LOG OUT</button>
+            <h2>Hello {cart.username}</h2>
+            <Cart />
+            <button className="cart-btn" onClick={handleClick}>LOG OUT</button>
         </div>
     )
 }
