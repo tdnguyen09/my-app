@@ -53,8 +53,9 @@ height: 30px;
 .nav-cart {
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 10px;
   font-size: 20px;
+  align-items: center;
 }
 
 .toy-item-list{

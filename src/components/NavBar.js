@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { FaUser } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 
 function NavBar(){
     const cart = useContext(CartContext);
@@ -19,7 +20,7 @@ function NavBar(){
             <NavLink className="no-underline"to="/signup">Sign up</NavLink>
             <NavLink className="no-underline"to="/cart">
                 <div className="nav-cart">
-                    <img src="https://www.svgrepo.com/show/80543/shopping-cart-outline.svg" alt="cart-icon" style={{width:'30px'},{height:'30px'}} />
+                    <FaCartShopping />
                     <div>{cart.totalQuantity()} item(s) </div>
                 </div>
             </NavLink>
