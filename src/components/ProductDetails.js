@@ -24,13 +24,15 @@ function ProductDetails () {
                 <p> $ {displayToy.price}</p>
                 {displayToy.clearance ? <p>Save $ {displayToy.discount}</p> : null }
                 { quantityToy > 0 ?
-                <>  <p>Quantity: {quantityToy} </p>
-                    <button onClick={() => cart.addToCart(displayToy.id)}>+</button>
-                    <button onClick={() => cart.removeOneFromCart(displayToy.id)}>-</button>
-                    <button onClick={() => cart.removeFromCart(displayToy.id)}>Remove From Cart</button>
+                <>  
+                    <p>Quantity: {quantityToy} </p>
+                    <button className="cart-btn" onClick={() => cart.addToCart(displayToy.id)}>+</button>
+                    <button className="cart-btn" onClick={() => cart.removeOneFromCart(displayToy.id)}>-</button>
+                    <button className="cart-btn" onClick={() => cart.removeFromCart(displayToy.id)}>Remove From Cart</button>
                 </>
-                : <button onClick={() => cart.addToCart(displayToy.id)}>Add to Cart</button>
+                : <button className="cart-btn" onClick={() => cart.addToCart(displayToy.id)}>Add to Cart</button>
                 }
+                <h4>PRODUCT DETAILS</h4>
                 <p>{displayToy.description}</p>
             </div>
         </div>

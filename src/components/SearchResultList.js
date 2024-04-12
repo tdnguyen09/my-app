@@ -13,7 +13,7 @@ function SearchResultList({ searchResult }){
                             image={searchToy.image}
                             name={searchToy.name}
                             price={searchToy.price}
-                            clearance={ searchToy.clearance ? <p>Save {searchToy.discount}</p> : null } />
+                            clearance={ searchToy.clearance ? <p>Save $ {searchToy.discount}</p> : null } />
                 </div>
             ))}
         </div>
