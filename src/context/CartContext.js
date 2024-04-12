@@ -5,6 +5,8 @@ const CartContext = React.createContext()
 function CartProvider({ children }) {
     const [cartItems, setCartItems] = useState([]);
     const [datas, setData] = useState([]);
+    const [isLogin, setIsLogin] = useState(false);
+    const [username, setUsername] = useState('')
     
     useEffect(() => {
         fetch("http://localhost:8000/toys")
@@ -67,16 +69,34 @@ function CartProvider({ children }) {
         let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
         return totalQuantity
     }
+    
+    function deleteCart(){
+        setCartItems([]);
+    }
+
+    function login(username){
+        setIsLogin(true);
+        setUsername(username);
+    }
+    function logout(){
+        setIsLogin(false);
+        setUsername('');
+    }
         
 
     const contextValue ={
         items: cartItems,
         allToyDatas: datas,
+        isLogin: isLogin,
+        username: username,
+        login,
+        logout,
         getItemQuantity,
         addToCart,
         removeFromCart,
         removeOneFromCart,
         totalQuantity,
+        deleteCart,
     }
 
 
