@@ -1,15 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext,  useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CartContext } from "../context/CartContext";
-
-
 
 function Login(){
     const cart = useContext(CartContext);
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
     const history = useHistory();
-
 
     function loginEmailChange(e){
         setLoginEmail(e.target.value)
@@ -40,7 +37,7 @@ function Login(){
         <div className="login">
             <h2>SIGN IN</h2>
             <p>Please sign in to your account to enjoy member-only benefits.</p>
-            <form className="login-form" >
+            <form className="login-form" onSubmit={loginSubmit} >
                 <label for='email'><strong>Email</strong></label>
                 <input type="email" name="email" id="email" required value={loginEmail} onChange={loginEmailChange}/>
                 <a href="">Forgot email</a>
