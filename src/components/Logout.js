@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContextgit } from "react";
 import Cart from "./Cart";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CartContext } from "../context/CartContext";
