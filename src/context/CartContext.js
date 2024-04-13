@@ -15,6 +15,7 @@ function CartProvider({ children }) {
            setData(toys)
         })
     },[])
+    
     function getItemQuantity(index) {
         const item = cartItems.find(item => item.id === index)
         return item ? item.quantity : 0 ;

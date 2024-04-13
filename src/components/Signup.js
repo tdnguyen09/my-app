@@ -59,7 +59,12 @@ function SignUp () {
             .then((userData) => console.log(userData))
         setEmail('');
         setPassword('');
-        setFormData({});
+        setFormData({
+            firstname:"",
+            lastname:"",
+            dob:"",
+            address:""
+        });
     }
     return (
         <div className="sign-up">
