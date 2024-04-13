@@ -7,8 +7,6 @@ import { FaCartShopping } from "react-icons/fa6";
 function NavBar(){
     const cart = useContext(CartContext);
     
-    
-    
     return (
         <div className="navbar">
             <NavLink className="no-underline" to="/">ATOK TOY SHOP</NavLink>
