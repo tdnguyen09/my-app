@@ -134,6 +134,7 @@ height: 30px;
   padding: 30px;
   row-gap: 15px;
   width: fit-content;
+  text-align: left;
 }
 .login button{
   margin: auto;

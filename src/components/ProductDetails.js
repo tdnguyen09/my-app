@@ -9,7 +9,7 @@ function ProductDetails () {
     const quantityToy = cart.getItemQuantity(displayToy.id)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/toys/${id}`)
+        fetch(`https://json-server-31ga.onrender.com/toys/${id}`)
         .then(res => res.json())
         .then(data => setDisplayToy(data))
     },[id])

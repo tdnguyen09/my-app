@@ -7,7 +7,7 @@ function Footer(){
         const newEmailSubcribe = {
             emailSubscribe: emailSubscribe
         };
-        fetch('http://localhost:8000/subscribe', {
+        fetch('https://json-server-31ga.onrender.com/subscribe', {
             method:"POST",
             headers: {
                 "Content-Type":"application/json",

@@ -9,7 +9,7 @@ function CartProvider({ children }) {
     const [username, setUsername] = useState('')
     
     useEffect(() => {
-        fetch("http://localhost:8000/toys")
+        fetch("https://json-server-31ga.onrender.com/toys")
         .then(res => res.json())
         .then((toys) => {
            setData(toys)

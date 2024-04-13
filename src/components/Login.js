@@ -21,7 +21,7 @@ function Login(){
             email: loginEmail,
             password: loginPassword
         }
-        fetch('http://localhost:8000/logininfo', {
+        fetch('https://json-server-31ga.onrender.com/logininfo', {
             method: 'POST',
             headers: {
                 "Content-Type":"application/json",
@@ -40,10 +40,10 @@ function Login(){
             <form className="login-form" onSubmit={loginSubmit} >
                 <label for='email'><strong>Email</strong></label>
                 <input type="email" name="email" id="email" required value={loginEmail} onChange={loginEmailChange}/>
-                <a href="">Forgot email</a>
+                <p>Forgot email</p>
                 <label for="password"><strong>Password</strong></label>
                 <input type="password" name="password" id="password" required value={loginPassword} onChange={loginPasswordChange}/>
-                <a href="">Forgot password</a>
+                <p>Forgot password</p>
                 <button type="submit">Sign in</button>
             </form>
         </div>

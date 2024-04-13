@@ -48,7 +48,7 @@ function SignUp () {
             address: formData.address,
             notification: formData.notification
         };
-        fetch("http://localhost:8000/userinfo",{
+        fetch("https://json-server-31ga.onrender.com/userinfo",{
             method:"POST",
             headers: {
                 "Content-Type":"application/json",
