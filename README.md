@@ -15,5 +15,6 @@ The features:
 - Have signup form 
 
 ### URL:
-https://tdnguyen09.github.io/my-app/
+website: https://tdnguyen09.github.io/my-app/
+json-server: https://json-server-31ga.onrender.com/
 
