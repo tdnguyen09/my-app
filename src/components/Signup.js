@@ -65,6 +65,7 @@ function SignUp () {
             dob:"",
             address:""
         });
+        alert('Success');
     }
     return (
         <div className="sign-up">
