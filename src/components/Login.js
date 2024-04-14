@@ -4,8 +4,8 @@ import { CartContext } from "../context/CartContext";
 
 function Login(){
     const cart = useContext(CartContext);
-    const [loginEmail, setLoginEmail] = useState('')
-    const [loginPassword, setLoginPassword] = useState('')
+    const [loginEmail, setLoginEmail] = useState('');
+    const [loginPassword, setLoginPassword] = useState('');
     const history = useHistory();
 
     function loginEmailChange(e){
